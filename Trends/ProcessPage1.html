@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>ADNU Lost and Found System</title>
+  <style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+    * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      background-color: #dde4e6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button:focus-visible {
+      outline: 2px solid #4a90e2 !important;
+    }
+
+    .desktop {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100px;
+      width: 100vw;
+      background-image: url('./img/HeaderBox.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .header__title {
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 24px;
+    }
+
+    .header__right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header__nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header__nav-link {
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .header__logout-btn {
+      font-weight: 500;
+      color: #000000;
+      font-size: 20px;
+      background-color: #d9d9d9;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      cursor: pointer;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      padding: 50px;
+      gap: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .process-steps {
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 0.5px solid #000000;
+      padding: 20px;
+      width: 25%;
+      min-width: 250px;
+    }
+
+    .process-steps__title {
+      font-weight: 500;
+      color: #000000;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .process-steps__list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .process-steps__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      font-weight: 500;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    .process-steps__item::before {
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-color: #c2c2c2;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      margin-right: 20px;
+    }
+
+    .process-steps__item--active::before {
+      background-color: #63d3e9;
+    }
+
+    .information-form {
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 0.5px solid #000000;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .information-form__title {
+      font-weight: 500;
+      color: #000000;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .information-form__fields {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .information-form__fields label {
+      font-weight: 500;
+      color: #000000;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .information-form__fields input {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    .next-btn {
+      align-self: flex-end;
+      margin-top: 20px;
+      font-weight: 500;
+      color: #000000;
+      font-size: 16px;
+      background-color: #63d3e9;
+      border: 1px solid #000000;
+      border-radius: 20px;
+      padding: 10px 30px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: #1c558d;
+      padding: 25px 0;
+      width: 100vw;
+    }
+
+    .footer__nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer__nav-link {
+      font-weight: 400;
+      color: #63d3e9;
+      font-size: 16px;
+      margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="desktop">
+    <header class="header">
+      <h1 class="header__title">ADNU Lost and Found System</h1>
+      <div class="header__right">
+        <nav class="header__nav">
+          <a href="#" class="header__nav-link">Home</a>
+          <a href="#" class="header__nav-link">Chat</a>
+        </nav>
+        <button class="header__logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <aside class="process-steps">
+        <h3 class="process-steps__title">Process Steps</h3>
+        <ol class="process-steps__list">
+          <li class="process-steps__item process-steps__item--active">Information Form</li>
+          <li class="process-steps__item">Ownership Evidence</li>
+          <li class="process-steps__item">Confirming Information</li>
+          <li class="process-steps__item">Processing</li>
+          <li class="process-steps__item">Conclusion</li>
+        </ol>
+      </aside>
+
+      <section class="information-form">
+        <h2 class="information-form__title">Information Form</h2>
+        <form class="information-form__fields">
+          <label for="full-name">Full Name:</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="student-id">Student ID:</label>
+          <input type="text" id="student-id" name="student-id" required />
+
+          <label for="year-course">Year and Course:</label>
+          <input type="text" id="year-course" name="year-course" required />
+
+          <label for="contact-number">Contact Number:</label>
+          <input type="tel" id="contact-number" name="contact-number" required />
+
+          <label for="email-address">Email Address:</label>
+          <input type="email" id="email-address" name="email-address" required />
+
+          <button class="next-btn" id="nextButton">Next</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav class="footer__nav">
+        <a href="#" class="footer__nav-link">Discover</a>
+        <a href="#" class="footer__nav-link">About Us</a>
+        <a href="#" class="footer__nav-link">How It Works</a>
+        <a href="#" class="footer__nav-link">FAQ's</a>
+        <a href="#" class="footer__nav-link">Become A Partner</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+  document.getElementById("nextButton").addEventListener("click", function () {
+    window.location.href = "ProcessPage2.html";
+  });
+</script>
+
+</body>
+</html>
